@@ -1,5 +1,9 @@
 package org.sparta.hellgorithm.week01.lesson;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class BinarySearch {
@@ -9,6 +13,10 @@ public class BinarySearch {
 
         do {
             int pc = (pl + pr) / 2;
+            System.out.println("<-"+pl+" +"+pc+" ->"+pr); 
+            // 인덱스 pc + 
+            // 검색시작값 pl <- 
+            // 끝값 pr 출력 ->
             if ( a[pc] == key ) {
                 return pc;
             }
@@ -24,6 +32,7 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
+    	/*
         Scanner stdIn = new Scanner(System.in);
 
         System.out.println("요솟 수");
@@ -50,5 +59,24 @@ public class BinarySearch {
         else if ( idx != -1 ){
             System.out.println(ky + "은[는] x[" + idx + " ]에 있습니다.");
         }
+        
+        */
+        // 3-1 문제
+       System.out.println("1부터 x 까지 넣을 숫자를 입력하세요 : x값 숫자 입력");
+       Scanner scn = new Scanner(System.in);
+       int inputNum = scn.nextInt();
+       int[] list = new int[inputNum];
+       for(int i=0;i<inputNum;i++) {
+    	   list[i] = i+1;
+       }
+       System.out.println("찾을 숫자를 입력해주세요");
+       int findNum = scn.nextInt();
+       int index = Arrays.binarySearch(list, findNum);
+       if(index >-1) {
+    	   System.out.println("list["+index+"] 값 존재 " + list[index]);
+       }else {
+    	   System.out.println("삽입포인트값 : "+index + "   배열의 ["+Math.abs(index)+"] 인덱스에 넣으면된다");
+       }
+       
     }
 }
