@@ -8,6 +8,7 @@ public class homework {
 		
 		int test[] = new int[6];
 		ArrayList<Integer> lee = new ArrayList<Integer>();
+		//22
 	}
 
 }
