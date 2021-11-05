@@ -1,5 +1,6 @@
 package org.sparta.hellgorithm.week01.homework;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinarySearch_2 {
@@ -25,6 +26,7 @@ public class BinarySearch_2 {
     }
     static void print(int n,int pl,int pr,int pc, int[] a){
         System.out.print("\t\t\t\t\t\t\t");
+        //ìë£Œ ìœ„ì— í™”ì‚´í‘œ í‘œì‹œ
         for(int i=0; i<n; i++){
             if(i==pl)
                 System.out.print("<-\t");
@@ -36,7 +38,9 @@ public class BinarySearch_2 {
                 System.out.print(" \t");
         }
         System.out.println();
-        System.out.print("ÇöÀç Á¶È¸ ÀÎµ¦½º: "+pc+"\t\t\t");
+
+        System.out.print("í˜„ì¬ ì¡°íšŒ ì¸ë±ìŠ¤: "+pc+"\t\t\t");
+        //í˜„ì¬ ìë£Œ ë°ì´í„°ê°’ í‘œì‹œ.
         for(int i=0; i<n; i++){
             System.out.print(a[i]+"\t");
         }
@@ -46,11 +50,11 @@ public class BinarySearch_2 {
     public static void main(String[] args) {
         Scanner stdIn = new Scanner(System.in);
 
-        System.out.println("¿ä¼Ú ¼ö");
+        System.out.println("ìš”ì†Ÿ ìˆ˜");
         int num = stdIn.nextInt();
 
         int[] x = new int[num];
-        System.out.println("¿À¸§Â÷¼øÀ¸·Î ÀÔ·ÂÇÏ¼¼¿ä.");
+        System.out.println("ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì…ë ¥í•˜ì„¸ìš”.");
         x[0] = stdIn.nextInt();
         for ( int i = 1; i < num; i++ ) {
             do {
@@ -59,16 +63,17 @@ public class BinarySearch_2 {
             } while (x[i] < x[i-1]);
         }
 
-        System.out.println("°Ë»öÇÒ °ª : ");
+        System.out.println("ê²€ìƒ‰í•  ê°’ : ");
         int ky = stdIn.nextInt();
 
-        int idx = binSearch(x, num, ky);
+        int idx = Arrays.binarySearch(x,  ky);
 
         if ( idx == -1 ) {
-            System.out.println("±× °ªÀÇ ¿ä¼Ò°¡ ¾ø½À´Ï´Ù.");
+            System.out.println("ê·¸ ê°’ì˜ ìš”ì†Œê°€ ì—†ìŠµë‹ˆë‹¤.");
         }
         else if ( idx != -1 ){
-            System.out.println(ky + "Àº[´Â] x[" + idx + " ]¿¡ ÀÖ½À´Ï´Ù.");
+            System.out.println(ky + "ì€[ëŠ”] x[" + idx + " ]ì— ìˆìŠµë‹ˆë‹¤.");
         }
+
     }
 }
