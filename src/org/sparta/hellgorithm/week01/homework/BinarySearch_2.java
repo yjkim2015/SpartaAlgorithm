@@ -2,7 +2,7 @@ package org.sparta.hellgorithm.week01.homework;
 
 import java.util.Scanner;
 
-public class BinarySearch {
+public class BinarySearch_2 {
     static int binSearch(int[] a, int n , int key) {
         int pl = 0;
         int pr = n -1;
