@@ -1,22 +1,25 @@
-package org.sparta.hellgorithm.week01.lesson;
+package org.sparta.hellgorithm.week01.homework;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class BinarySearch {
+
     static int binSearch(int[] a, int n , int key) {
+
+        String[] str = new String[n];
         int pl = 0;
         int pr = n -1;
 
         do {
             int pc = (pl + pr) / 2;
-            System.out.println("<-"+pl+" +"+pc+" ->"+pr); 
-            // 인덱스 pc + 
-            // 검색시작값 pl <- 
-            // 끝값 pr 출력 ->
+
+            Arrays.fill(str, " ");
+            str[pl] = "<-";
+            str[pr] = "->";
+            str[pc] = "+";
+            printFlagsAndNumbers(str, a);
+
             if ( a[pc] == key ) {
                 return pc;
             }
@@ -31,8 +34,38 @@ public class BinarySearch {
         return -1;
     }
 
+    static void printFlagsAndNumbers(String[] flags, int[] numbers) {
+        if (flags.length != numbers.length) {
+            throw new IllegalArgumentException("잘못된 인자값 입니다.");
+        }
+
+        int maxNumber = Arrays.stream(numbers)
+                .max()
+                .getAsInt();
+
+        int spaceLength = String.valueOf(maxNumber).length();
+
+        if (spaceLength < 3) {
+            spaceLength = 3;
+        }
+
+        Integer[] boxingNumbers = Arrays.stream(numbers)
+                .boxed()
+                .toArray(Integer[]::new);
+
+        StringBuilder flagSB = new StringBuilder();
+        StringBuilder numberSB = new StringBuilder();
+
+        for (int i = 0; i < flags.length; i++) {
+            flagSB.append("%" + spaceLength + "s");
+            numberSB.append("%" + spaceLength + "d");
+        }
+
+        System.out.printf(flagSB + "\n", flags);
+        System.out.printf(numberSB + "\n", boxingNumbers);
+    }
+
     public static void main(String[] args) {
-    	/*
         Scanner stdIn = new Scanner(System.in);
 
         System.out.println("요솟 수");
@@ -57,26 +90,7 @@ public class BinarySearch {
             System.out.println("그 값의 요소가 없습니다.");
         }
         else if ( idx != -1 ){
-            System.out.println(ky + "은[는] x[" + idx + " ]에 있습니다.");
+            System.out.println(ky + "은[는] x[" + idx + "]에 있습니다.");
         }
-        
-        */
-        // 3-1 문제
-       System.out.println("1부터 x 까지 넣을 숫자를 입력하세요 : x값 숫자 입력");
-       Scanner scn = new Scanner(System.in);
-       int inputNum = scn.nextInt();
-       int[] list = new int[inputNum];
-       for(int i=0;i<inputNum;i++) {
-    	   list[i] = i+1;
-       }
-       System.out.println("찾을 숫자를 입력해주세요");
-       int findNum = scn.nextInt();
-       int index = Arrays.binarySearch(list, findNum);
-       if(index >-1) {
-    	   System.out.println("list["+index+"] 값 존재 " + list[index]);
-       }else {
-    	   System.out.println("삽입포인트값 : "+index + "   배열의 ["+Math.abs(index)+"] 인덱스에 넣으면된다");
-       }
-       
     }
 }
