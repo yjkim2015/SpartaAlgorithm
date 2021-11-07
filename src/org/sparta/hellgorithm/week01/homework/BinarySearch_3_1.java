@@ -23,8 +23,11 @@ public class BinarySearch_3_1 {
         System.out.println("검색할 값 : ");
         int ky = stdIn.nextInt();
 
+        //Arrays.binarySearch를 사용하여 이진탐색 인자값은 (배열, 찾는 key)
         int idx = Arrays.binarySearch(x,  ky);
 
+        //Arrays.binarySearch를 사용하여 데이터가 없을시 (인덱스 + 1) * -1 리턴.
+        //즉 없을시 음수 값이므로 음수 일 시 값의 요소가 없음.
         if ( idx < 0 ) {
             System.out.println("그 값의 요소가 없습니다.");
         }

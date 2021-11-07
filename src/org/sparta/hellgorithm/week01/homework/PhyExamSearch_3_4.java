@@ -35,7 +35,7 @@ public class PhyExamSearch_3_4 {
             }
         }
 
-        //시력기준 내림차순 Comparator
+        //시력기준 내림차순 Comparator구현
         private static class VisionOrderComparator implements  Comparator<PhyscData>{
 
             @Override
@@ -60,11 +60,14 @@ public class PhyExamSearch_3_4 {
                 new PhyscData("이호연", 175, 1.8),
         };
 
-        //시력기준으로 정렬
+        //시력기준으로 사전 정렬
         Arrays.sort(x,PhyscData.VISION_ORDER);
 
         System.out.println("시력이 몇인 사람을 찾고 있나요?");
         double vision = stdIn.nextDouble();
+
+        //Arrays.binarySearch(배열,클래스,정렬기준(Comparator))
+        //이클래스배열을 지정한 정렬기준으로 대소관계를 비교하며 이진탐색.
         int idx = Arrays.binarySearch(
                 x,
                 new PhyscData("", 0, vision),

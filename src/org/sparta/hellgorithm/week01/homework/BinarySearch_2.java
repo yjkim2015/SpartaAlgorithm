@@ -5,9 +5,13 @@ import java.util.Scanner;
 
 public class BinarySearch_2 {
     static int binSearch(int[] a, int n , int key) {
+
+        //초기 인덱스 범위
+        //처음 시작인덱스 이므로 0~n-1까지가 범위.
         int pl = 0;
         int pr = n -1;
 
+        //탐색을 하면서 중간값만 비교하여 범위를 반씩 줄여나가면서 값을 찾을때까지 반복.
         do {
             int pc = (pl + pr) / 2;
             print(n,pl,pr,pc,a);
@@ -24,6 +28,7 @@ public class BinarySearch_2 {
 
         return -1;
     }
+
     static void print(int n,int pl,int pr,int pc, int[] a){
         System.out.print("\t\t\t\t\t\t\t");
         //자료 위에 화살표 표시
