@@ -131,7 +131,7 @@ public class IntQueue {
      * 공간 복잡도 O(n)
      */
     public void enque(int element) {
-        if (num >= max) {
+        if (isFull()) {
             throw new OverflowIntQueueException("포인터값이 용량을 벗어났습니다.");
         }
 
@@ -147,7 +147,7 @@ public class IntQueue {
      * 공간 복잡도 O(n)
      */
     public int deque() {
-        if (num <= 0) {
+        if (isEmpty()) {
             throw new EmptyIntQueueException("큐가 비어있습니다.");
         }
 

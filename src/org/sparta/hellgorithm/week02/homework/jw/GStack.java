@@ -18,7 +18,7 @@ public class GStack<T> {
      * 공간 복잡도 O(n)
      */
     public void push(T element) {
-        if (ptr >= max) {
+        if (isFull()) {
             throw new OverflowStackExpception("포인터값이 용량을 벗어났습니다.");
         }
 
@@ -33,7 +33,7 @@ public class GStack<T> {
      * 공간 복잡도 O(n)
      */
     public T pop() {
-        if (ptr <= 0) {
+        if (isEmpty()) {
             throw new EmptyIntStackException("스택이 비어있습니다.");
         }
 
@@ -51,7 +51,7 @@ public class GStack<T> {
      * 공간 복잡도 O(n)
      */
     public T peek() {
-        if (ptr <= 0) {
+        if (isEmpty()) {
             throw new EmptyIntStackException("스택이 비어있습니다.");
         }
         return stk[ptr - 1];
@@ -68,7 +68,7 @@ public class GStack<T> {
     public int indexOf(T element) {
         int idx = 0;
 
-        if (ptr <= 0) {
+        if (isEmpty()) {
             throw new EmptyIntStackException("스택이 비어있습니다.");
         }
 
@@ -149,7 +149,7 @@ public class GStack<T> {
      * 공간 복잡도 O(n)
      */
     public String dump() {
-        if (ptr <= 0) {
+        if (isEmpty()) {
             throw new EmptyIntStackException("스택이 비어있습니다.");
         }
 
