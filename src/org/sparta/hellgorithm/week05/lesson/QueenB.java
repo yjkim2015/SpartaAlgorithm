@@ -14,6 +14,7 @@ public class QueenB {
 
     //i열에 퀸을 놓는다.
     static void set(int i) {
+        System.out.println("i : " + i);
         for ( int j = 0; j < 8; j++ ) {
             pos[i] = j;     //퀸을 j행에 배치한다.
             if ( i == 7 ) { //모든 열에 배치한다.

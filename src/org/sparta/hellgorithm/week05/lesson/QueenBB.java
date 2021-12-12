@@ -15,6 +15,7 @@ public class QueenBB {
 
     // i열의 알맞은 위치에 퀸을 배치한다
     static void set(int i) {
+        System.out.println("i : " + i);
         for ( int j = 0; j < 8; j++ ) {
             if ( flag[j] == false ) {   //j행에는 퀸을 아직 배치하지 않았다면
                 pos[i] = j;             // 퀸을 j행에 배치
