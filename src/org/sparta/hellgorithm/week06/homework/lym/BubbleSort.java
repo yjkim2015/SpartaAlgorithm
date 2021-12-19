@@ -36,6 +36,7 @@ public class BubbleSort {
         System.out.println("패스횟수:("+n+")  비교횟수:("+sum+")  교환횟수:("+sumPlus+")");
     }
 
+    //문제 3번
     static void bubleSort2(int[] a, int n) {
     	int sumPlus = 0;
     	int sumMinus = 0;
@@ -62,6 +63,7 @@ public class BubbleSort {
         System.out.println("패스횟수:("+n+")  비교횟수:("+sum+")  교환횟수:("+sumPlus+")");
     }
 
+    //문제 4번
     static void bubbleSort3(int[]a, int n) {
     	int sumPlus = 0;
     	int sumMinus = 0;
@@ -91,6 +93,7 @@ public class BubbleSort {
     }
 
     
+    //문제 5번
     static void bubbleSort4(int[]a, int n) {
     	int sumRight = 0;
     	int sumLeft = 0;
@@ -145,19 +148,19 @@ public class BubbleSort {
         int[] x3 = {1,3,4,9,6,7,8};
         int[] x4 = {9,1,3,4,6,7,8};
         //int[] x3 = {3,9,7,4,5,6,8};
-        bubbleSort1(x, 7);
+        bubbleSort1(x, 7);  //문제 1번 2번
         System.out.println();
         System.out.println();
         System.out.println();
-        bubleSort2(x2, 7);
+        bubleSort2(x2, 7); // 문제 3번
         System.out.println();
         System.out.println();
         System.out.println();
-        bubbleSort3(x3, 7);
+        bubbleSort3(x3, 7); // 문제 4번
         System.out.println();
         System.out.println();
         System.out.println();
-        bubbleSort4(x4, 7);
+        bubbleSort4(x4, 7); // 문제 5번
         
     	
     }
