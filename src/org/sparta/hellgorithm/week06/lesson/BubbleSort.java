@@ -37,6 +37,8 @@ public class BubbleSort {
         int k = 0;
         while ( k < n-1 ) {
             int last = n-1;
+            System.out.println("k : " + k);
+
             for ( int j = n-1; j > k; j-- ) {
                 if ( a[j-1] > a[j] ) {
                     swap(a, j-1, j);
@@ -48,7 +50,7 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] x = {1,3,4,9,6,7,8};
+        int[] x = {1,3,9,4,7,8,6};
         bubbleSort3(x, 7);
         Integer[] boxingNumbers = Arrays.stream(x).boxed().toArray(Integer[]::new);
 

@@ -1,6 +1,8 @@
 package sparta.hellgorithm.week06.homework.choi;
 
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.util.Arrays;
 
 
@@ -97,6 +99,7 @@ public class BubbleSort {
         boolean swap = true;
         int i = 0;
         int j = n -1;
+
         while (i < j && swap) {
             swap = false;
             for (int k = i; k < j; k++) {
