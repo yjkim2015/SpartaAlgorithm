@@ -17,8 +17,22 @@ public class InsertionSort {
         return a;
     }
 
+    // 단순삽입정렬(보초법：배열의 머리요소는 비어있습니다.)
+    static int[] insertionSort(int[] a, int n) {
+        for (int i = 2; i < n; i++) {
+            int tmp = a[0] = a[i];
+            int j = i;
+            for (; a[j - 1] > tmp; j--)
+                a[j] = a[j - 1];
+            if (j > 0)
+                a[j] = tmp;
+        }
+
+        return a;
+    }
+
     public static void main(String[] args) {
         int[] arr = {22,5,11,32,120,68,70};
-        System.out.println(Arrays.toString(sort(arr,7)));
+        System.out.println(Arrays.toString(insertionSort(arr,7)));
     }
 }
