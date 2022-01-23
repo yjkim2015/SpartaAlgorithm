@@ -13,11 +13,13 @@ public class QuickSort {
         int pr = right;
         int x = a[(pl+pr)/2];
 
-        System.out.printf("a[%d]~a[%d] : {", left, right);
+        int first = a[0];
+        int middle = a[a.length/2];
+        int last = a[a.length-1];
 
-        for ( int i = left; i < right; i++ ) {
-            System.out.printf("%d , ", a[i]);
-        }
+
+
+
         System.out.printf("%d}\n", a[right]);
 
         while( pl < pr ) {
